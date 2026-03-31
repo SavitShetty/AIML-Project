@@ -6,25 +6,8 @@ The project covers both supervised and unsupervised learning techniques, along w
 
 🧠 Implemented Algorithms
 
-🔹 1. Single Layer Perceptron (SLP)
-Used for binary classification
-Demonstrates how linear decision boundaries are formed
-Includes training using weights and bias updates
+The Smart Health Risk Predictor is a Machine Learning-based web application that predicts the risk of diabetes based on user health parameters. It helps users understand their health condition and take preventive measures early.
 
-🔹 2. Linear Regression
-Predicts continuous values
-Shows relationship between dependent and independent variables
-Implemented using basic mathematical formulation
-
-🔹 3. K-Means Clustering
-Unsupervised learning algorithm
-Groups data into clusters based on similarity
-Includes centroid calculation and iteration process
-
-🔹 4. Multi-Layer Perceptron (MLP)
-Basic neural network model
-Demonstrates hidden layers and activation functions
-Used for more complex pattern recognition
 
 🛠️ Tech Stack
 Python
@@ -32,14 +15,35 @@ NumPy – numerical computations
 Matplotlib – data visualization (if used)
 (Optional) Scikit-learn – for comparison or support
 
-📊 What This Project Demonstrates
-Difference between supervised and unsupervised learning
-How models learn from data
-Importance of iteration and optimization
-Basics of neural network architecture
+🚀 Features
+📊 Predicts Diabetes Risk (High / Low)
+🧠 Uses Machine Learning (Random Forest)
+🌐 Interactive Web App (Streamlit)
+📥 User-friendly input system
+💡 Provides basic health suggestions
 
-🎯 Learning Outcomes
-Clear understanding of ML fundamentals
-Hands-on coding experience
-Ability to implement algorithms from scratch
-Better intuition for model behavior
+📊 Dataset
+Name: Pima Indians Diabetes Dataset
+
+Source: Kaggle / UCI ML Repository
+
+Contains medical data such as:
+
+Glucose level
+BMI
+Age
+Blood pressure
+
+📈 Model Performance
+Algorithm: Random Forest
+Accuracy: ~75–85% (depends on dataset split)
+
+🌟 Future Improvements
+🔥 Add multiple disease prediction (heart, obesity)
+📊 Data visualization dashboard
+🤖 AI chatbot for health advice
+🌐 Deploy on cloud (Streamlit Cloud / Render)
+
+⚠️ Disclaimer
+This project is for educational purposes only and should not be considered as medical advice. Always consult a healthcare professional.
+
