@@ -1,17 +1,7 @@
-STRUCTURE
-health_predictor
-app.py
-model.py
-diabetes.csv
-requirements.txt
-
-DATABASE
-https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database
-
-MODEL.PY
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import classification_report
 import pickle
 
 # Load dataset
@@ -27,29 +17,32 @@ X_train, X_test, y_train, y_test = train_test_split(
 )
 
 # Model
-model = RandomForestClassifier(n_estimators=100)
+model = RandomForestClassifier(n_estimators=100, random_state=42)
 model.fit(X_train, y_train)
 
-# Accuracy
-accuracy = model.score(X_test, y_test)
-print("Model Accuracy:", accuracy)
+# Evaluation
+y_pred = model.predict(X_test)
+print("Model Accuracy:", model.score(X_test, y_test))
+print("\nClassification Report:\n")
+print(classification_report(y_test, y_pred))
 
-# Save model
-pickle.dump(model, open("model.pkl", "wb"))
+# Save model + columns (IMPORTANT FIX)
+with open("model.pkl", "wb") as f:
+    pickle.dump((model, X.columns.tolist()), f)
 
-APP.PY
+print("\nModel saved as model.pkl")
 
 import streamlit as st
 import numpy as np
+import pandas as pd
 import pickle
 
-# Load model
-model = pickle.load(open("model.pkl", "rb"))
+# Load model and column names
+model, columns = pickle.load(open("model.pkl", "rb"))
 
 st.set_page_config(page_title="Health Predictor", layout="centered")
 
 st.title("🧠 Smart Health Risk Predictor")
-
 st.write("Enter your health details below:")
 
 # Input fields
@@ -64,9 +57,10 @@ age = st.number_input("Age", 1, 120)
 
 # Prediction
 if st.button("Predict"):
-    input_data = np.array([[pregnancies, glucose, blood_pressure,
-                            skin_thickness, insulin, bmi,
-                            diabetes_pedigree, age]])
+    input_data = pd.DataFrame([[pregnancies, glucose, blood_pressure,
+                                skin_thickness, insulin, bmi,
+                                diabetes_pedigree, age]],
+                              columns=columns)
 
     prediction = model.predict(input_data)
 
@@ -74,29 +68,8 @@ if st.button("Predict"):
         st.error("⚠️ High Risk of Diabetes")
         st.write("👉 Suggestions:")
         st.write("- Reduce sugar intake")
-        st.write("- Exercise daily")
+        st.write("- Exercise regularly")
         st.write("- Consult a doctor")
     else:
         st.success("✅ Low Risk of Diabetes")
         st.write("👉 Keep maintaining a healthy lifestyle!")
-
-
-
-REQUIREMENTS
-
-pandas
-numpy
-scikit-learn
-streamlit
-
-HOW TO Run
-
-pip install -r requirements.txt
-python model.py
-streamlit run app.py
-
-UPDATE
-from sklearn.metrics import classification_report
-
-y_pred = model.predict(X_test)
-print(classification_report(y_test, y_pred))
