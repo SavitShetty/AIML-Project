@@ -10,12 +10,14 @@ The Smart Health Risk Predictor is a Machine Learning-based web application that
 
 
 🛠️ Tech Stack
+
 Python
 NumPy – numerical computations
 Matplotlib – data visualization (if used)
 (Optional) Scikit-learn – for comparison or support
 
 🚀 Features
+
 📊 Predicts Diabetes Risk (High / Low)
 🧠 Uses Machine Learning (Random Forest)
 🌐 Interactive Web App (Streamlit)
@@ -23,6 +25,7 @@ Matplotlib – data visualization (if used)
 💡 Provides basic health suggestions
 
 📊 Dataset
+
 Name: Pima Indians Diabetes Dataset
 
 Source: Kaggle / UCI ML Repository
@@ -35,15 +38,18 @@ Age
 Blood pressure
 
 📈 Model Performance
+
 Algorithm: Random Forest
 Accuracy: ~75–85% (depends on dataset split)
 
 🌟 Future Improvements
+
 🔥 Add multiple disease prediction (heart, obesity)
 📊 Data visualization dashboard
 🤖 AI chatbot for health advice
 🌐 Deploy on cloud (Streamlit Cloud / Render)
 
 ⚠️ Disclaimer
+
 This project is for educational purposes only and should not be considered as medical advice. Always consult a healthcare professional.
 
