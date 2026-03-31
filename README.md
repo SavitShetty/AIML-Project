@@ -8,14 +8,17 @@ The project covers both supervised and unsupervised learning techniques, along w
 Used for binary classification
 Demonstrates how linear decision boundaries are formed
 Includes training using weights and bias updates
+
 🔹 2. Linear Regression
 Predicts continuous values
 Shows relationship between dependent and independent variables
 Implemented using basic mathematical formulation
+
 🔹 3. K-Means Clustering
 Unsupervised learning algorithm
 Groups data into clusters based on similarity
 Includes centroid calculation and iteration process
+
 🔹 4. Multi-Layer Perceptron (MLP)
 Basic neural network model
 Demonstrates hidden layers and activation functions
