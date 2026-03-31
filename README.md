@@ -5,6 +5,7 @@ This repository contains implementations of core Artificial Intelligence and Mac
 The project covers both supervised and unsupervised learning techniques, along with basic neural network concepts.
 
 🧠 Implemented Algorithms
+
 🔹 1. Single Layer Perceptron (SLP)
 Used for binary classification
 Demonstrates how linear decision boundaries are formed
