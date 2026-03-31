@@ -25,3 +25,21 @@ Includes centroid calculation and iteration process
 Basic neural network model
 Demonstrates hidden layers and activation functions
 Used for more complex pattern recognition
+
+🛠️ Tech Stack
+Python
+NumPy – numerical computations
+Matplotlib – data visualization (if used)
+(Optional) Scikit-learn – for comparison or support
+
+📊 What This Project Demonstrates
+Difference between supervised and unsupervised learning
+How models learn from data
+Importance of iteration and optimization
+Basics of neural network architecture
+
+🎯 Learning Outcomes
+Clear understanding of ML fundamentals
+Hands-on coding experience
+Ability to implement algorithms from scratch
+Better intuition for model behavior
